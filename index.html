@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orihinal | Episode Gallery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <main class="hero-section">
+      <div class="mobile-brand" role="img" aria-label="ARK Studio"></div>
+      <div class="mobile-hero-art" aria-hidden="true"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-teaser-wrapper">
+        <video id="teaserVideo" class="hero-teaser-video" preload="auto" playsinline aria-hidden="true">
+          <source src="assets/videos/TEASER.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <button id="teaserMuteToggle" class="teaser-mute-toggle" type="button" aria-label="Toggle teaser sound">�</button>
+        <div class="hero-teaser-glow"></div>
+      </div>
+      <div class="hero-copy">
+        <div class="mobile-intro">
+          <h1 class="mobile-title">
+            <span class="mobile-title-art" aria-hidden="true"></span>
+            <span class="visually-hidden">Orihinal</span>
+          </h1>
+          <p class="mobile-tagline">An Educational Hybrid Animated Series On Copyright Infringement</p>
+          <p class="mobile-description">Follows five prisoners, each with a different copyright infringement case. Through their stories, the series explores common copyright violations, their consequences, and the importance of respecting intellectual property rights in the digital age.</p>
+          <div class="mobile-actions">
+            <button class="mobile-play-button" id="mobilePlayButton" type="button"><span aria-hidden="true">▶</span> Play</button>
+            <button class="mobile-more-button" id="mobileMoreButton" type="button" aria-label="Go to episodes">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right-panel">
+        <div class="mobile-episodes-heading">
+          <h2>Episodes</h2>
+          <button id="mobileViewAll" type="button" aria-expanded="false">View All <span aria-hidden="true">›</span></button>
+        </div>
+        <div class="hero-episodes">
+          <div class="episode-row" id="episodeRow">
+        <div class="episode-card" data-episode="episode1" data-title="EP 01: PIRACY SITE" data-description="Rico creates an illegal streaming website to watch and share movies for free. He learns that copyright infringement is a serious offense punishable under Philippine law." data-video="assets/videos/Episode1video1.mp4" data-bg="assets/images/CardEpisode1.jpg">
+          <div class="episode-image">
+            <img class="mobile-episode-image" src="assets/images/CardEpisode1.jpg" alt="" aria-hidden="true">
+            <img src="assets/images/episode1.jpg" alt="Piracy Site">
+          </div>
+          <div class="episode-info">
+            <span class="episode-label">EP 01</span>
+            <h3>Piracy Site</h3>
+          </div>
+        </div>
+
+        <div class="episode-card" data-episode="episode2" data-title="EP 02: DEEP-FAKE" data-description="A character uses AI to create a misleading deep-fake video. The story shows why consent and authenticity are essential, and how infringement damages trust." data-video="assets/videos/Episode2video1.mp4" data-bg="assets/images/CardEpisode2.jpg">
+          <div class="episode-image">
+            <img class="mobile-episode-image" src="assets/images/CardEpisode2.jpg" alt="" aria-hidden="true">
+            <img src="assets/images/episode2.jpg" alt="Deep-Fake">
+          </div>
+          <div class="episode-info">
+            <span class="episode-label">EP 02</span>
+            <h3>Deep-Fake</h3>
+          </div>
+        </div>
+
+        <div class="episode-card" data-episode="episode3" data-title="EP 03: COUNTERFEIT" data-description="A character gets involved with counterfeit goods. This episode teaches how creating and distributing fake products violates copyright and trademark laws." data-video="assets/videos/Episode3video1.mp4" data-bg="assets/images/CardEpisode3.jpg">
+          <div class="episode-image">
+            <img class="mobile-episode-image" src="assets/images/CardEpisode3.jpg" alt="" aria-hidden="true">
+            <img src="assets/images/episode3.jpg" alt="Counterfeit">
+          </div>
+          <div class="episode-info">
+            <span class="episode-label">EP 03</span>
+            <h3>Counterfeit</h3>
+          </div>
+        </div>
+
+        <div class="episode-card" data-episode="episode4" data-title="EP 04: FAKE APP" data-description="An unauthorized app copies an existing platform. The story explains how software piracy and app cloning are forms of digital infringement." data-video="assets/videos/Episode4video1.mp4" data-bg="assets/images/CardEpisode4.jpg">
+          <div class="episode-image">
+            <img class="mobile-episode-image" src="assets/images/CardEpisode4.jpg" alt="" aria-hidden="true">
+            <img src="assets/images/episode4.jpg" alt="Fake App">
+          </div>
+          <div class="episode-info">
+            <span class="episode-label">EP 04</span>
+            <h3>Fake App</h3>
+          </div>
+        </div>
+
+        <div class="episode-card" data-episode="episode5" data-title="EP 05: STREAM RING" data-description="A streaming ring shares stolen content across devices. This episode highlights how piracy networks harm creators and viewers alike." data-video="assets/videos/Episode5video1.mp4" data-bg="assets/images/CardEpisode5.jpg">
+          <div class="episode-image">
+            <img class="mobile-episode-image" src="assets/images/CardEpisode5.jpg" alt="" aria-hidden="true">
+            <img src="assets/images/episode5.jpg" alt="Stream Ring">
+          </div>
+          <div class="episode-info">
+            <span class="episode-label">EP 05</span>
+            <h3>Stream Ring</h3>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-overlay hidden" id="playerModal">
+    <div class="modal-panel">
+      <button class="modal-close" id="playerClose">×</button>
+      <div class="modal-preview" id="modalPreview">
+        <div class="modal-preview-image-frame">
+          <video id="modalPreviewVideo" class="modal-preview-video" preload="metadata" muted loop playsinline aria-hidden="true"></video>
+          <img id="modalPreviewImage" class="modal-preview-image" src="" alt="Episode preview">
+          <div class="modal-preview-overlay"></div>
+        </div>
+        <div class="modal-text">
+          <h2 id="modalTitle">Episode Title</h2>
+          <p id="modalDescription">Episode description appears here when you click a card.</p>
+          <button id="modalOpenVideoButton" class="modal-open-video-button" type="button">Play Episode</button>
+        </div>
+      </div>
+      <div class="video-container hidden">
+        <div class="video-wrapper">
+          <video id="modalVideo" preload="metadata">
+            <source id="modalVideoSource" src="" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <button id="modalPlayButton" class="modal-play-button" type="button">Play</button>
+          <div class="retry-overlay hidden" id="retryOverlay" role="alertdialog" aria-modal="true">
+            <div class="retry-card">
+              <p class="retry-message">You didn’t pass the required score. Please try again.</p>
+              <button id="retryButton" class="retry-button" type="button">Retry</button>
+            </div>
+          </div>
+          <!-- Custom controls (replaces native controls which are disabled) -->
+          <div class="video-controls" id="videoControls">
+            <button id="vcPlayPause" class="vc-button" aria-label="Play/Pause">▶</button>
+            <div class="vc-timeline">
+              <input id="vcSeek" class="vc-seek" type="range" min="0" max="100" value="0" step="0.1">
+            </div>
+            <div class="vc-time">
+              <span id="vcCurrent">0:00</span>
+              <span class="vc-sep">/</span>
+              <span id="vcDuration">0:00</span>
+            </div>
+            <div class="vc-volume">
+              <button class="vc-volume-icon" type="button" aria-label="Adjust episode volume">🔊</button>
+              <input id="vcVolume" class="vc-volume-slider" type="range" min="0" max="1" step="0.01" value="1" aria-label="Adjust episode volume">
+            </div>
+          </div>
+          <button id="modalFullscreenButton" class="modal-fullscreen-button" type="button" aria-label="Toggle fullscreen">⤢</button>
+          <div class="quiz-overlay hidden" id="quizOverlay" aria-live="polite">
+            <div class="quiz-card">
+              <div class="quiz-visual">
+                <img src="assets/images/Episode1QnA1.png" alt="Episode 1 quiz prompt">
+                <div class="quiz-options">
+                  <button class="quiz-option" data-answer="legal" type="button">A. Legal</button>
+                  <button class="quiz-option" data-answer="illegal" type="button">B. Ilegal</button>
+                  <button class="quiz-option is-hidden" data-answer="10175" type="button">A. Republic Act 10175</button>
+                </div>
+              </div>
+              <p class="quiz-feedback" id="quizFeedback"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="locked-popup hidden" id="lockedPopup" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="locked-popup-panel">
+      <div class="locked-popup-icon" aria-hidden="true">✕</div>
+      <p class="locked-popup-message">Watch the unlocked episode and answer its question correctly to unlock this episode.</p>
+      <button class="locked-popup-close" id="lockedPopupClose" type="button" aria-label="Close">Close</button>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
